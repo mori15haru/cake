@@ -1,0 +1,2 @@
+1. sort
+/articles?sort=(CASE%20SUBSTR(text,%201,%201)%20WHEN%20'h'%20THEN%200%20else%201%20END)
