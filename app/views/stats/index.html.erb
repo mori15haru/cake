@@ -1,0 +1,15 @@
+<h1>Listing Stats</h1>
+
+<%= form_tag(stats_show_path, :method => :get) do %>
+  <select name="stats">
+    <option value='{"table":"article", "operator":"average", "column":""}'>
+      Average of number of comments per article
+    </option>
+    <option value='{"operator":"count"}'>
+      Total number of articles
+    </option>
+  </select>
+  <%= submit_tag "GET" %>
+<% end %>
+<br/ >
+<%= "Result: #{@stats}" %>
