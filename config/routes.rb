@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   get 'stats/index'
   get 'stats/show'
 
+  resources :users do
+    get 'show'
+    post 'delete_all_comments'
+    post 'delete_all_articles'
+  end
+
   resources :articles do
     resources :comments
   end

