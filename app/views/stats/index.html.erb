@@ -2,11 +2,14 @@
 
 <%= form_tag(stats_show_path, :method => :get) do %>
   <select name="stats">
-    <option value='{"table":"article", "operator":"average", "column":""}'>
-      Average of number of comments per article
-    </option>
-    <option value='{"operator":"count"}'>
+    <option value='{"table":"article", "operator":"count", "column":"", "id":"1"}' <%= @selected == 1 ? 'selected' : '' %> >
       Total number of articles
+    </option>
+    <option value='{"table":"comment", "operator":"count", "column":"", "id":"2"}' <%= @selected == 2 ? 'selected' : '' %> >
+      Total number of comments
+    </option>
+    <option value='{"sub_stats":"average_comments", "id":"3"}' <%= @selected == 3 ? 'selected' : '' %>>
+      Average number of comments per article
     </option>
   </select>
   <%= submit_tag "GET" %>
